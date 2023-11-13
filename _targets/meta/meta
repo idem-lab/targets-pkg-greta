@@ -1,0 +1,10 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+.Random.seed|object|a5404b45f1685acd|||||||||||||||
+build_pipeline|function|01ccf013327d7cef|||||||||||||||
+create_greta_arrays|function|e35263519d1d3ccb|||||||||||||||
+draws|stem|94a90054f1f7dba3|fededcda1d718b11|fbf760187adf0771|2115193332||t19654.3814404261s||296572|rds|local|vector|||4.889||Unable to access object object is from previous session and is now invalid
+greta_arrays|stem|2e9cb527613a5937|a616eab9936c5ff9|31cc4b12f782d960|-1415528768||t19654.3813786955s|c5e41705f798363f|57721|rds|local|vector|||3.294||
+m|stem|96328f9227bd5d19|ea73ca8b6f7043a1|e73e9e985def577c|-1530279563||t19654.381379446s|da36fcd2496cf4ac|71733|rds|local|vector|||0.031||
+run_pipeline|function|7f4ee77edcdcbd0c|||||||||||||||
+x|stem|872be45cf97525b1|65ed5135d574840a|ef46db3751d8e999|-1828477467||t19654.3813401417s|63c2d5d6ce2d0be6|307|rds|local|vector|||0.001||
+y|stem|d0d90541d73c4e8f|d471717a484783bc|ef46db3751d8e999|-2137718520||t19654.3813402248s|21cb808e5a67bfdb|302|rds|local|vector|||0||
