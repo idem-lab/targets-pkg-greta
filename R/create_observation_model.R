@@ -7,25 +7,23 @@
 #'
 #' @return greta arrays
 #' @export
-create_greta_arrays <- function (x, y) {
+create_observation_model <- function (sd, x, y) {
 
   int <- normal(0, 5)
   coef <- normal(0, 3)
-  sd <- lognormal(0, 3)
 
   mean <- int + coef * x
+
   distribution(y) <- normal(mean, sd)
 
   greta_arrays <- list(
     int,
     coef,
-    sd,
     mean
   )
   names(greta_arrays) <- c(
     'int',
     'coef',
-    'sd',
     'mean'
   )
   greta_arrays
