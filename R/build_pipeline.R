@@ -7,6 +7,7 @@
 build_pipeline <- function () {
 
   targets::tar_helper("_targets.R", {
+
     # Load packages required to define the pipeline:
     library(targets)
     library(greta)
@@ -14,17 +15,21 @@ build_pipeline <- function () {
     # Run the R scripts in the R/ folder with your custom functions:
     tar_source()
 
-    # Replace the target list below with your own:
     targets <- list(
 
       tar_target(x, iris$Petal.Length),
       tar_target(y, iris$Sepal.Length),
 
-      tar_target(greta_arrays, create_greta_arrays(x, y)),
+      tar_target(sd_greta_array, create_greta_arrays_sd()),
+      tar_target(observation_greta_arrays,
+                 create_observation_model(sd_greta_array$sd, x, y)),
 
-      tar_target(m, model(greta_arrays$int,
-                          greta_arrays$coef,
-                          greta_arrays$sd)),
+      tar_target(combined_greta_arrays,
+                 c(sd_greta_array, observation_greta_arrays)),
+
+      tar_target(m, model(combined_greta_arrays$int,
+                          combined_greta_arrays$coef,
+                          combined_greta_arrays$sd)),
 
       tar_target(draws, mcmc(m, n_samples = 500, chains = 4))
 
